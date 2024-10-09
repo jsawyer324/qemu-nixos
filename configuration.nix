@@ -63,6 +63,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.james = {
     isNormalUser = true;
+    initialPassword = "password";
     description = "james";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
