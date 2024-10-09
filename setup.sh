@@ -12,6 +12,7 @@ sudo mount /dev/disk/by-label/NIXBOOT /mnt/boot
 
 #copy
 sudo cp ./configuration.nix /mnt/etc/nixos/
+sudo cp us5068.nordvpn.com.udp1194.ovpn /mnt/etc/nixos/
 
 #config
 sudo nixos-generate-config --root /mnt
