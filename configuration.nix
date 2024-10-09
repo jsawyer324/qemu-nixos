@@ -19,7 +19,6 @@
   # Enable networking
   networking.networkmanager.enable = true;
   services.networkd-dispatcher.enable = true;
-	
   networking.interfaces.enp1s0.ipv4.routes = [
   	{
     	  address = "192.168.1.0";
@@ -46,14 +45,16 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  services.xserver = [
+	enable = true;
+	displayManager.lightdm.enable = true;
+	desktopManager.xfce.enable = true;
+	xkb = {
+		layout = "us";
+		variant = "";
+	};
+  ];
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true; 
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
 
   services.spice-vdagentd.enable = true;
