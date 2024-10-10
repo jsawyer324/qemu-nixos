@@ -41,7 +41,7 @@
   services.xserver = {
 	enable = true;
 	displayManager.lightdm.enable = true;
-	desktopManager.xfce.enable = true;
+	desktopManager.mate.enable = true;
 	xkb = {
     		layout = "us";
     		variant = "";
