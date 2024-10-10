@@ -1,6 +1,7 @@
 #format disks
 sudo sgdisk -n 1::+512M /dev/vda -t 1:ef00
-sudo sgdisk -n 2:: /dev/vda 
+sudo sgdisk -n 2::+2G /dev/vda -t 2:8200
+sudo sgdisk -n 3:: /dev/vda 
 
 sleep 10
 
@@ -15,10 +16,12 @@ sudo mount /dev/disk/by-label/NIXBOOT /mnt/boot
 sleep 10
 
 #swap
-sudo dd if=/dev/zero of=/mnt/.swapfile bs=1024 count=2097152
-sudo chmod 600 /mnt/.swapfile
-sudo mkswap /mnt/.swapfile
-sudo swapon /mnt/.swapfile
+#sudo dd if=/dev/zero of=/mnt/.swapfile bs=1024 count=2097152
+#sudo chmod 600 /mnt/.swapfile
+#sudo mkswap /mnt/.swapfile
+#sudo swapon /mnt/.swapfile
+sudo mkswap /dev/vda2
+sudo swapon /dev/vda2
 
 sleep 10
 
