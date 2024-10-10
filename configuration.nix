@@ -68,7 +68,7 @@
     	    #thunderbird
     	];
   };
-fight the change
+
   nixpkgs.config.allowUnfree = true;
 
 
