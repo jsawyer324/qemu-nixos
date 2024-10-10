@@ -8,7 +8,7 @@ sleep 10
 #mount
 sudo mkfs.fat -F 32 /dev/vda1
 sudo fatlabel /dev/vda1 NIXBOOT
-sudo mkfs.ext4 /dev/vda2 -L NIXROOT
+sudo mkfs.ext4 /dev/vda3 -L NIXROOT
 sudo mount /dev/disk/by-label/NIXROOT /mnt
 sudo mkdir -p /mnt/boot
 sudo mount /dev/disk/by-label/NIXBOOT /mnt/boot
