@@ -104,7 +104,7 @@
    };
 
 
-  networking.firewall.enable = true;
+  networking.firewall.enable = false;
 
   networking.firewall.extraCommands = ''
   	#iptables -A nixos-fw -p tcp --source 192.0.2.0/24 --dport 1714:1764 -j nixos-fw-accept || true
