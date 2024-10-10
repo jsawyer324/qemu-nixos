@@ -73,14 +73,14 @@
 
 
   environment.systemPackages = with pkgs; [
-	brave
-	networkmanager-openvpn
-	nfs-utils
-	cifs-utils
-	session-desktop
-	spice-vdagent
-	spice-autorandr  
-	numlockx  
+	#brave
+	#networkmanager-openvpn
+	#nfs-utils
+	#cifs-utils
+	#session-desktop
+	#spice-vdagent
+	#spice-autorandr  
+	#numlockx  
   ];
 
    programs.git = {
@@ -92,21 +92,19 @@
    };
     
    services = {
-	openssh.enable = true;		# Enable the OpenSSH daemon.
-	spice-vdagentd.enable = true;
-	qemuGuest.enable = true;	
-    	samba.enable = true;    	# Enable the Samba daemon.
-    	gvfs.enable = true;     	# Mount, trash, and other functionalities
-    	tumbler.enable = true;  	# Thumbnail support for images
+	#openssh.enable = true;		# Enable the OpenSSH daemon.
+	#spice-vdagentd.enable = true;
+	#qemuGuest.enable = true;	
+    	#samba.enable = true;    	# Enable the Samba daemon.
+    	#gvfs.enable = true;     	# Mount, trash, and other functionalities
+    	#tumbler.enable = true;  	# Thumbnail support for images
    };
 
 
   networking.firewall.enable = false;
 
   networking.firewall.extraCommands = ''
-  	#iptables -A nixos-fw -p tcp --source 192.0.2.0/24 --dport 1714:1764 -j nixos-fw-accept || true
-  	#iptables -A nixos-fw -p udp --source 192.0.2.0/24 --dport 1714:1764 -j nixos-fw-accept || true
-	
+
 	#Allow loopback device (internal communication)
 	iptables -A INPUT -i lo -j ACCEPT
 	iptables -A OUTPUT -o lo -j ACCEPT
