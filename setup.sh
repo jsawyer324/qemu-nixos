@@ -22,17 +22,18 @@ sudo swapon /mnt/.swapfile
 
 sleep 10
 
+#config
+sudo nixos-generate-config --root /mnt
+
+sleep 10
+
 #copy
 sudo cp ./configuration.nix /mnt/etc/nixos/
 sudo cp ./us5068.nordvpn.com.udp1194.ovpn /mnt/etc/nixos/
 
 #sleep 10
 
-#config
-#sudo nixos-generate-config --root /mnt
-
-#sleep 10
 
 #install
-#cd /mnt
-#sudo nixos-install
+cd /mnt
+sudo nixos-install
