@@ -34,7 +34,7 @@ sleep 10
 sudo cp ./configuration.nix /mnt/etc/nixos/
 sudo cp ./us5068.nordvpn.com.udp1194.ovpn /mnt/etc/nixos/
 
-#sleep 10
+sleep 10
 
 
 #install
