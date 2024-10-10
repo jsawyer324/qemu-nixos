@@ -14,17 +14,25 @@ sudo mount /dev/disk/by-label/NIXBOOT /mnt/boot
 
 sleep 10
 
+#swap
+sudo dd if=/dev/zero of=/mnt/.swapfile bs=1024 count=2097152
+sudo chmod 600 /mnt/.swapfile
+sudo mkswap /mnt/.swapfile
+sudo swapon /mnt/.swapfile
+
+sleep 10
+
 #copy
 sudo cp ./configuration.nix /mnt/etc/nixos/
 sudo cp ./us5068.nordvpn.com.udp1194.ovpn /mnt/etc/nixos/
 
-sleep 10
+#sleep 10
 
 #config
-sudo nixos-generate-config --root /mnt
+#sudo nixos-generate-config --root /mnt
 
-sleep 10
+#sleep 10
 
 #install
-cd /mnt
-sudo nixos-install
+#cd /mnt
+#sudo nixos-install
