@@ -73,14 +73,14 @@
 
 
   environment.systemPackages = with pkgs; [
-	#brave
-	#networkmanager-openvpn
-	#nfs-utils
-	#cifs-utils
-	#session-desktop
+	brave
+	networkmanager-openvpn
+	nfs-utils
+	cifs-utils
+	session-desktop
 	#spice-vdagent
 	#spice-autorandr  
-	#numlockx  
+	numlockx  
   ];
 
    programs.git = {
@@ -92,12 +92,12 @@
    };
     
    services = {
-	#openssh.enable = true;		# Enable the OpenSSH daemon.
+	openssh.enable = true;		# Enable the OpenSSH daemon.
 	#spice-vdagentd.enable = true;
 	#qemuGuest.enable = true;	
-    	#samba.enable = true;    	# Enable the Samba daemon.
-    	#gvfs.enable = true;     	# Mount, trash, and other functionalities
-    	#tumbler.enable = true;  	# Thumbnail support for images
+    	samba.enable = true;    	# Enable the Samba daemon.
+    	gvfs.enable = true;     	# Mount, trash, and other functionalities
+    	tumbler.enable = true;  	# Thumbnail support for images
    };
 
 
