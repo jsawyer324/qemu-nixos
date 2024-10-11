@@ -26,7 +26,7 @@ sudo cp ./us5068.nordvpn.com.udp1194.ovpn /mnt/etc/nixos/
 
 #update hostname
 read -rp "Enter hostname: " HOSTNAME
-sed -i "s/nixoshost/$HOSTNAME/g" /mnt/etc/locale.gen
+sed -i "s/nixoshost/$HOSTNAME/g" /mnt/etc/nixos/configuration.nix
 
 #install
 cd /mnt || exit
