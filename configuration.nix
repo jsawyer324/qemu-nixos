@@ -93,8 +93,8 @@
     
    services = {
 	openssh.enable = true;		# Enable the OpenSSH daemon.
-	#spice-vdagentd.enable = true;
-	#qemuGuest.enable = true;	
+	spice-vdagentd.enable = true;
+	qemuGuest.enable = true;	
     	samba.enable = true;    	# Enable the Samba daemon.
     	gvfs.enable = true;     	# Mount, trash, and other functionalities
     	tumbler.enable = true;  	# Thumbnail support for images
