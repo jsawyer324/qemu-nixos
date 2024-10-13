@@ -28,7 +28,7 @@
     			Option "PreferredMode" "1920x1153_60.00"
 				EndSection
       '';
-			mode = "0700";
+			mode = "0660";
     };
   };	
 
@@ -50,10 +50,7 @@
 
   services.xserver = {
 		enable = true;
-		displayManager.lightdm = {
-			enable = true;
-			#wayland.enable = true;
-		};
+		displayManager.lightdm.enable = true;
 		desktopManager.xfce.enable = true;
 		xkb = {
 			layout = "us";
@@ -118,7 +115,7 @@
   #   Miami1 = { config = '' config /etc/nixos/ovpn/Miami/us9400.nordvpn.com.udp1194.ovpn ''; };
   # };
 
-  networking.firewall.enable = false;
+  networking.firewall.enable = true;
 
   networking.firewall.extraCommands = ''
 
