@@ -102,6 +102,10 @@
 		tumbler.enable = true;  	# Thumbnail support for images
    };
 
+  #services.openvpn.servers.<name>.config
+	services.openvpn.servers = {
+    Miami1 = { config = '' config ./ovpn/Miami/us9400.nordvpn.com.udp1194.ovpn ''; };
+  };
 
   networking.firewall.enable = true;
 
