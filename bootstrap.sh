@@ -1,5 +1,5 @@
 #! /usr/bin/env nix-shell
-#! nix-shell -i bash -p bash git
+#! nix-shell -p git
 
 
 git clone https://github.com/jsawyer324/qemu-nixos.git
