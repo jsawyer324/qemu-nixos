@@ -52,7 +52,7 @@
 		enable = true;
 		displayManager.lightdm = {
 			enable = true;
-			wayland.enable = true;
+			#wayland.enable = true;
 		};
 		desktopManager.xfce.enable = true;
 		xkb = {
