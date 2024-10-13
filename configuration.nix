@@ -50,7 +50,10 @@
 
   services.xserver = {
 		enable = true;
-		displayManager.lightdm.enable = true;
+		displayManager.lightdm = {
+			enable = true;
+			wayland.enable = true;
+		};
 		desktopManager.xfce.enable = true;
 		xkb = {
 			layout = "us";
@@ -89,8 +92,6 @@
 		nfs-utils
 		cifs-utils
 		session-desktop
-		#spice-vdagent
-		#spice-autorandr  
 		numlockx  
   ];
 
@@ -113,9 +114,9 @@
    };
 
   #services.openvpn.servers.<name>.config
-	services.openvpn.servers = {
-    Miami1 = { config = '' config /etc/nixos/ovpn/Miami/us9400.nordvpn.com.udp1194.ovpn ''; };
-  };
+	# services.openvpn.servers = {
+  #   Miami1 = { config = '' config /etc/nixos/ovpn/Miami/us9400.nordvpn.com.udp1194.ovpn ''; };
+  # };
 
   networking.firewall.enable = false;
 
