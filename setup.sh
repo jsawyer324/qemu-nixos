@@ -22,7 +22,7 @@ sudo nixos-generate-config --root /mnt
 
 #copy
 sudo cp ./configuration.nix /mnt/etc/nixos/
-sudo cp ./ovpn/ /mnt/etc/nixos/
+sudo cp -r ./ovpn /mnt/etc/nixos/
 
 #update hostname
 read -rp "Enter hostname: " HOSTNAME
