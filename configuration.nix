@@ -104,10 +104,10 @@
 
   #services.openvpn.servers.<name>.config
 	services.openvpn.servers = {
-    Miami1 = { config = '' config ./ovpn/Miami/us9400.nordvpn.com.udp1194.ovpn ''; };
+    Miami1 = { config = '' config /etc/nixos/ovpn/Miami/us9400.nordvpn.com.udp1194.ovpn ''; };
   };
 
-  networking.firewall.enable = true;
+  networking.firewall.enable = false;
 
   networking.firewall.extraCommands = ''
 
