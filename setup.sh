@@ -1,8 +1,7 @@
 #!/bin/bash
 
-#update hostname
+#input hostname
 read -rp "Enter hostname: " HOSTNAME
-sed -i "s/nixoshost/$HOSTNAME/g" /mnt/etc/nixos/configuration.nix
 
 #partition disk
 sudo sgdisk -n 1::+512M /dev/vda -t 1:ef00
@@ -27,6 +26,9 @@ sudo nixos-generate-config --root /mnt
 #copy
 sudo cp ./configuration.nix /mnt/etc/nixos/
 sudo cp -r ./ovpn /mnt/etc/nixos/
+
+#edit hostname
+sed -i "s/nixoshost/$HOSTNAME/g" /mnt/etc/nixos/configuration.nix
 
 #install
 cd /mnt || exit
