@@ -99,13 +99,13 @@
 		samba.enable = true;    			# Enable the Samba daemon.
 		gvfs.enable = true;     			# Mount, trash, and other functionalities
 		tumbler.enable = true;  			# Thumbnail support for images
-		openvpn.servers.vpn = {
-			config = "config /etc/nixos/ovpn/Chicago/us8389.nordvpn.com.udp1194.ovpn";
-			autoStart = false;
-			#authUserPass.password = *****;
-			#authUserPass.username = *****;
-			updateResolvConf = true;
-		};
+		# openvpn.servers.vpn = {
+		# 	config = "config /etc/nixos/ovpn/Chicago/us8389.nordvpn.com.udp1194.ovpn";
+		# 	autoStart = false;
+		# 	#authUserPass.password = *****;
+		# 	#authUserPass.username = *****;
+		# 	updateResolvConf = true;
+		# };
 	};
 
 	hardware.pulseaudio.enable = false; 	# Disable PulseAudio.
