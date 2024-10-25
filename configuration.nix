@@ -97,9 +97,9 @@
 		};
 
 		networkd-dispatcher.enable = true;  # Enable the networkd-dispatcher service.
-		openssh.enable = true;				# Enable the OpenSSH daemon.
-		spice-vdagentd.enable = true;		# Enable the Spice VDAgent daemon.
-		qemuGuest.enable = true;			# Enable the QEMU guest agent.
+		#openssh.enable = true;				# Enable the OpenSSH daemon.
+		#spice-vdagentd.enable = true;		# Enable the Spice VDAgent daemon.
+		#qemuGuest.enable = true;			# Enable the QEMU guest agent.
 		samba.enable = true;    			# Enable the Samba daemon.
 		gvfs.enable = true;     			# Mount, trash, and other functionalities
 		tumbler.enable = true;  			# Thumbnail support for images
