@@ -24,7 +24,7 @@ sudo swapon /dev/vda2
 sudo nixos-generate-config --root /mnt
 
 #copy
-sudo cp ./configuration.nix /mnt/etc/nixos/
+sudo cp ./configuration.nix /mnt/etc/nixos/configuration.nix
 sudo cp -r ./ovpn /mnt/etc/nixos/
 
 #edit hostname
