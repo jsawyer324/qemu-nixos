@@ -75,12 +75,14 @@
   	};
 
 	services ={
+
+		
 		xserver = {
 			enable = true;
 			displayManager = {
-				sddm.enable = true; 
+				lightdm.enable = true; 
 			};
-			desktopManager.plasma6.enable = true;
+			desktopManager.cinnamon.enable = true;
 			xkb = {
 				layout = "us";
 				variant = "";
@@ -121,31 +123,31 @@
 	security.rtkit.enable = true;			# Enable the RealtimeKit to allow low-latency audio.
 
 
-  	users.users.james = {
-    	isNormalUser = true;
-    	initialPassword = "password";
-    	description = "james";
-    	extraGroups = [ "networkmanager" "wheel" ];
-  	};
+	users.users.james = {
+		isNormalUser = true;
+		initialPassword = "password";
+		description = "james";
+		extraGroups = [ "networkmanager" "wheel" ];
+	};
 
-  	nixpkgs.config.allowUnfree = true;	# Allow unfree packages.
+	nixpkgs.config.allowUnfree = true;	# Allow unfree packages.
 
-  	environment.systemPackages = with pkgs; [
+	environment.systemPackages = with pkgs; [
 		brave
 		networkmanager-openvpn
 		nfs-utils
 		cifs-utils
 		session-desktop
 		numlockx
-  	];
+	];
 
-   	programs.git = {
-     	enable = true;
-     	config = {
-      		user.name = "James Sawyer";
-      		user.email = "jsawyer324@gmail.com";
-    	};
-   	};
-    
-  	system.stateVersion = "24.11"; # Did you read the comment?
+	programs.git = {
+		enable = true;
+		config = {
+				user.name = "James Sawyer";
+				user.email = "jsawyer324@gmail.com";
+		};
+	};
+	
+	system.stateVersion = "24.05"; # Did you read the comment?
 }
