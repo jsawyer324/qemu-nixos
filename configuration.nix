@@ -39,24 +39,24 @@
 		# };
 	};
 
-	environment.etc = {
-		# 	"NetworkManager/dispatcher.d/10-routes.sh" = {
-		# 	text = ''
-		# 			ip route add 192.168.1.0/24 via 10.0.2.2
-		# '';
-		# 		mode = "0700";
-		# };
-			"X11/xorg.conf.d/10-monitor.conf" = {
-			text = ''
-					Section "Monitor"
-					Identifier "Virtual-1"
-					Modeline "1920x1153_60.00"  184.75  1920 2048 2248 2576  1153 1156 1166 1196 -hsync +vsync
-					Option "PreferredMode" "1920x1153_60.00"
-					EndSection
-		'';
-				mode = "0660";
-		};
-  	};	
+	# environment.etc = {
+	# 	# 	"NetworkManager/dispatcher.d/10-routes.sh" = {
+	# 	# 	text = ''
+	# 	# 			ip route add 192.168.1.0/24 via 10.0.2.2
+	# 	# '';
+	# 	# 		mode = "0700";
+	# 	# };
+	# 		"X11/xorg.conf.d/10-monitor.conf" = {
+	# 		text = ''
+	# 				Section "Monitor"
+	# 				Identifier "Virtual-1"
+	# 				Modeline "1920x1153_60.00"  184.75  1920 2048 2248 2576  1153 1156 1166 1196 -hsync +vsync
+	# 				Option "PreferredMode" "1920x1153_60.00"
+	# 				EndSection
+	# 	'';
+	# 			mode = "0660";
+	# 	};
+  	# };	
 
 
 	time.timeZone = "America/Chicago";
