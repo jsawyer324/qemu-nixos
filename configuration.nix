@@ -75,19 +75,22 @@
   	};
 
 	services ={
+		displayManager.sddm.enable = true; 
+		desktopManager.plasma6.enable = true;
+
 		xserver = {
 			enable = true;
-			displayManager = {
-				sddm.enable = true; 
-			};
-			desktopManager.plasma6.enable = true;
+			# displayManager = {
+			# 	sddm.enable = true; 
+			# };
+			# desktopManager.plasma6.enable = true;
 			xkb = {
 				layout = "us";
 				variant = "";
 			};
 		};
-		displayManager.defaultSession = "cinnamon"; 
-		libinput.enable = true;
+		#displayManager.defaultSession = "cinnamon"; 
+		#libinput.enable = true;
 		
 		pipewire = {
 			enable = true;	
