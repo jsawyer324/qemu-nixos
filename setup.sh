@@ -20,15 +20,20 @@ sudo mount /dev/disk/by-label/NIXBOOT /mnt/boot
 sudo mkswap /dev/vda2
 sudo swapon /dev/vda2
 
+sleep 30
+
 #config
 sudo nixos-generate-config --root /mnt
 
 #copy
-sudo cp ./configuration.nix /mnt/etc/nixos/configuration.nix
+sudo cp ./configuration.nix /mnt/etc/nixos/
 sudo cp -r ./ovpn /mnt/etc/nixos/
 
 #edit hostname
 sed -i "s/nixoshost/$HOSTNAME/g" /mnt/etc/nixos/configuration.nix
+
+
+sleep 30
 
 #install
 cd /mnt || exit
