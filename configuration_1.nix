@@ -115,7 +115,8 @@
 
 	users.users.james = {
 		isNormalUser = true;
-		initialPassword = "password";
+		#initialPassword = "password";
+		initialHashedPassword = "$y$j9T$M5BabIW6pI/pvv4S8Iw3w1$0Bw84D2PmB6enz15qyTNt5VeHfhzhJ3JsQ5CE0gcrOD";
 		description = "james";
 		extraGroups = [ "networkmanager" "wheel" ];
 	};
