@@ -111,7 +111,6 @@
 	security.rtkit.enable = true;
 
 	users.users.james = {
-		createHome = true;
 		isNormalUser = true;
 		initialHashedPassword = "$y$j9T$M5BabIW6pI/pvv4S8Iw3w1$0Bw84D2PmB6enz15qyTNt5VeHfhzhJ3JsQ5CE0gcrOD";
 		description = "james";
@@ -119,11 +118,10 @@
 	};
 
 	users.users.james2 = {
-		createHome = true;
 		isNormalUser = true;
-		initialHashedPassword = "$y$j9T$M5BabIW6pI/pvv4S8Iw3w1$0Bw84D2PmB6enz15qyTNt5VeHfhzhJ3JsQ5CE0gcrOD";
+		initialHashedPassword = "$y$j9T$KROWBMCQFO8yETNQRiI5B0$R6ERGEDQyKEE4R6Mgi8ZdlpV2zFlOLz65sxhOZ71nJ5";
 		description = "james2";
-		extraGroups = [ "networkmanager" "wheel" "james"];
+		extraGroups = [ "james"];
 	};
 
 	nixpkgs.config.allowUnfree = true;
