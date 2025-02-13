@@ -3,6 +3,9 @@
 #input hostname
 read -rp "Enter hostname: " HOSTNAME
 
+#input cifs password
+read -rp "Enter cifs password: " CIFSPASS
+
 #partition disk
 sudo sgdisk -n 1::+512M /dev/vda -t 1:ef00
 sudo sgdisk -n 2::+2G /dev/vda -t 2:8200
@@ -29,6 +32,9 @@ sudo cp -r ./ovpn /mnt/etc/nixos/
 
 #edit hostname
 sed -i "s/nixoshost/$HOSTNAME/g" /mnt/etc/nixos/configuration.nix
+
+#edit cifspassword
+sed -i "s/cifs_password/$CIFSPASS/g" /mnt/etc/nixos/configuration.nix
 
 #install
 cd /mnt || exit

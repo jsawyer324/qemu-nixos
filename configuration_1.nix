@@ -12,8 +12,7 @@
 
 		hostName = "nixoshost";
 		networkmanager.enable = true;
-		
-		firewall.enable = false;
+
 		firewall = {
 			enable = false;
 			extraCommands = ''
@@ -54,11 +53,11 @@
 
 		"X11/xorg.conf.d/10-monitor.conf" = {
 			text = ''
-					Section "Monitor"
-					Identifier "Virtual-1"
-					Modeline "1920x1153_60.00"  184.75  1920 2048 2248 2576  1153 1156 1166 1196 -hsync +vsync
-					Option "PreferredMode" "1920x1153_60.00"
-					EndSection
+				Section "Monitor"
+				Identifier "Virtual-1"
+				Modeline "1920x1153_60.00"  184.75  1920 2048 2248 2576  1153 1156 1166 1196 -hsync +vsync
+				Option "PreferredMode" "1920x1153_60.00"
+				EndSection
 			'';
 			mode = "0660";
 		};
@@ -138,6 +137,24 @@
 		config = {
 				user.name = "James Sawyer";
 				user.email = "jsawyer324@gmail.com";
+		};
+	};
+
+	fileSystems."/home/james/nas" = {
+		device = "//192.168.1.14/Media2$";
+		fsType = "cifs";
+		options = let
+			automount_opts = "dir_mode=0777,file_mode=0666,noperm";
+		in ["credentials=/etc/nixos/smb-secrets,${automount_opts}"];
+	};
+
+	environment = {
+		etc."nixos/smb-credentials" = {
+			mode = "0644";
+			text = ''
+				username=jsawyer
+				password=cifs_password
+			'';
 		};
 	};
 
