@@ -115,10 +115,16 @@
 
 	users.users.james = {
 		isNormalUser = true;
-		#initialPassword = "password";
 		initialHashedPassword = "$y$j9T$M5BabIW6pI/pvv4S8Iw3w1$0Bw84D2PmB6enz15qyTNt5VeHfhzhJ3JsQ5CE0gcrOD";
 		description = "james";
-		extraGroups = [ "networkmanager" "wheel" ];
+		extraGroups = [ "networkmanager" "wheel" "james2"];
+	};
+	
+	users.users.james2 = {
+		isNormalUser = true;
+		initialHashedPassword = "$y$j9T$M5BabIW6pI/pvv4S8Iw3w1$0Bw84D2PmB6enz15qyTNt5VeHfhzhJ3JsQ5CE0gcrOD";
+		description = "james";
+		extraGroups = [ "networkmanager" "wheel" "james"];
 	};
 
 	nixpkgs.config.allowUnfree = true;
@@ -156,6 +162,21 @@
 		options = let
 			automount_opts = "dir_mode=0777,file_mode=0666,noperm";
 		in ["credentials=/etc/nixos/smb-secrets,${automount_opts}"];
+	};
+
+	systemd.tmpfiles.settings = {
+		"userfoldersettings" = {
+			"/home/james" = {
+				d = {
+					mode = "0770";
+				};
+			};
+			"/home/james2" = {
+				d = {
+					mode = "0770";
+				};
+			};
+		};
 	};
 
 	system.stateVersion = "24.11"; # Did you read the comment?
