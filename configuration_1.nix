@@ -64,7 +64,6 @@
 
 	};
 
-
 	time.timeZone = "America/Chicago";
 
 	i18n.defaultLocale = "en_US.UTF-8";
@@ -79,7 +78,6 @@
 		LC_TELEPHONE = "en_US.UTF-8";
 		LC_TIME = "en_US.UTF-8";
 	};
-
 
 	services = {
 		
@@ -103,7 +101,6 @@
 		spice-vdagentd.enable = true;
 		qemuGuest.enable = true;
 		networkd-dispatcher.enable = true;
-		# openssh.enable = true;		# Enable the OpenSSH daemon.
 		samba.enable = true;    	# Enable the Samba daemon.
 		gvfs.enable = true;     	# Mount, trash, and other functionalities
 		tumbler.enable = true;  	# Thumbnail support for images
@@ -142,7 +139,6 @@
 		systemPackages = with pkgs; [
 			brave
 			networkmanager-openvpn
-			# nfs-utils
 			cifs-utils
 			session-desktop
 			numlockx
@@ -150,14 +146,6 @@
 			xorg.xhost
 		];
 	};
-
-	# programs.git = {
-	# 	enable = true;
-	# 	config = {
-	# 		user.name = "James Sawyer";
-	# 		user.email = "jsawyer324@gmail.com";
-	# 	};
-	# };
 
 	fileSystems."/home/james/nas" = {
 		device = "//192.168.1.14/Media2$";
