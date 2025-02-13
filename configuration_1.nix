@@ -14,7 +14,7 @@
 		networkmanager.enable = true;
 
 		firewall = {
-			enable = false;
+			enable = true;
 			extraCommands = ''
 
 				#Allow loopback device (internal communication)
@@ -122,21 +122,30 @@
 
 	nixpkgs.config.allowUnfree = true;
 
-	environment.systemPackages = with pkgs; [
-		brave
-		networkmanager-openvpn
-		nfs-utils
-		cifs-utils
-		session-desktop
-		numlockx
-		mesa
-	];
+	environment = {
+		etc."nixos/smb-secrets" = {
+			mode = "0644";
+			text = ''
+				username=jsawyer
+				password=cifs_password
+			'';
+		};
+		systemPackages = with pkgs; [
+			brave
+			networkmanager-openvpn
+			nfs-utils
+			cifs-utils
+			session-desktop
+			numlockx
+			mesa
+		];
+	};
 
 	programs.git = {
 		enable = true;
 		config = {
-				user.name = "James Sawyer";
-				user.email = "jsawyer324@gmail.com";
+			user.name = "James Sawyer";
+			user.email = "jsawyer324@gmail.com";
 		};
 	};
 
@@ -146,16 +155,6 @@
 		options = let
 			automount_opts = "dir_mode=0777,file_mode=0666,noperm";
 		in ["credentials=/etc/nixos/smb-secrets,${automount_opts}"];
-	};
-
-	environment = {
-		etc."nixos/smb-credentials" = {
-			mode = "0644";
-			text = ''
-				username=jsawyer
-				password=cifs_password
-			'';
-		};
 	};
 
 	system.stateVersion = "24.11"; # Did you read the comment?
