@@ -86,7 +86,7 @@
 				variant = "";
 			};
 		};
-		displayManager.defaultSession = "cinnamon"; 
+		desktopManager.xfce.enable = true;
 		libinput.enable = true;
 		
 		pipewire = {

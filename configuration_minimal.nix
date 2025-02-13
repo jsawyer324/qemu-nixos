@@ -57,7 +57,7 @@
 		spice-vdagentd.enable = true;
 		qemuGuest.enable = true;	
 
-	}
+	};
 
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -74,5 +74,5 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 }
