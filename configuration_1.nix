@@ -103,7 +103,7 @@
 		spice-vdagentd.enable = true;
 		qemuGuest.enable = true;
 		networkd-dispatcher.enable = true;
-		openssh.enable = true;		# Enable the OpenSSH daemon.
+		# openssh.enable = true;		# Enable the OpenSSH daemon.
 		samba.enable = true;    	# Enable the Samba daemon.
 		gvfs.enable = true;     	# Mount, trash, and other functionalities
 		tumbler.enable = true;  	# Thumbnail support for images
@@ -114,16 +114,18 @@
 	security.rtkit.enable = true;
 
 	users.users.james = {
+		createHome = true;
 		isNormalUser = true;
 		initialHashedPassword = "$y$j9T$M5BabIW6pI/pvv4S8Iw3w1$0Bw84D2PmB6enz15qyTNt5VeHfhzhJ3JsQ5CE0gcrOD";
 		description = "james";
 		extraGroups = [ "networkmanager" "wheel" "james2"];
 	};
-	
+
 	users.users.james2 = {
+		createHome = true;
 		isNormalUser = true;
 		initialHashedPassword = "$y$j9T$M5BabIW6pI/pvv4S8Iw3w1$0Bw84D2PmB6enz15qyTNt5VeHfhzhJ3JsQ5CE0gcrOD";
-		description = "james";
+		description = "james2";
 		extraGroups = [ "networkmanager" "wheel" "james"];
 	};
 
@@ -140,21 +142,22 @@
 		systemPackages = with pkgs; [
 			brave
 			networkmanager-openvpn
-			nfs-utils
+			# nfs-utils
 			cifs-utils
 			session-desktop
 			numlockx
 			mesa
+			xorg.xhost
 		];
 	};
 
-	programs.git = {
-		enable = true;
-		config = {
-			user.name = "James Sawyer";
-			user.email = "jsawyer324@gmail.com";
-		};
-	};
+	# programs.git = {
+	# 	enable = true;
+	# 	config = {
+	# 		user.name = "James Sawyer";
+	# 		user.email = "jsawyer324@gmail.com";
+	# 	};
+	# };
 
 	fileSystems."/home/james/nas" = {
 		device = "//192.168.1.14/Media2$";
