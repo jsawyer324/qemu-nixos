@@ -141,6 +141,7 @@
 			session-desktop
 			numlockx
 			mesa
+			ffmpegthumbnailer
 			xorg.xhost
 		];
 	};
