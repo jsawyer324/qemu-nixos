@@ -153,6 +153,10 @@
 			xorg.xhost
 		];
 	};
+	programs.appimage = {
+		enable = true;
+		binfmt = true;
+	};
 
 	fileSystems."/home/james/nas" = {
 		device = "//192.168.1.14/Media2$";
